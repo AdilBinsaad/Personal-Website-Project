@@ -1,6 +1,6 @@
 /* ===== พื้นฐาน ===== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
 }
 
@@ -8,18 +8,33 @@ body {
 header {
   background: #111;
   color: white;
-  padding: 15px;
-  text-align: center;
+  padding: 25px 60px; /* เพิ่ม padding ซ้ายขวา */
+  display: flex;
+  justify-content: space-between; /* ดันซ้าย-ขวา */
+  align-items: center;
 }
 
+/* ===== ชื่อเว็บ (ซ้าย) ===== */
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* ===== Nav (ขวา) ===== */
 nav {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
+/* ===== เมนู ===== */
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #38bdf8;
 }
