@@ -1,0 +1,25 @@
+/* ===== พื้นฐาน ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* ===== Header ===== */
+header {
+  background: #111;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
