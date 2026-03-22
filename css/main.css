@@ -1,15 +1,16 @@
 /* =========================
-   Base (Progressive Enhancement)
+   Base (Modern Dark UI)
    ========================= */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
+
   background: #0f172a;
   color: white;
 }
 
 /* =========================
-   Header (Flexbox)
+   Header (Desktop Layout)
    ========================= */
 header {
   background: #111;
@@ -21,7 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  flex-wrap: wrap; /* responsive */
+  flex-wrap: wrap;
 }
 
 /* =========================
@@ -33,7 +34,7 @@ header h1 {
 }
 
 /* =========================
-   Navigation (Flexbox)
+   Navigation
    ========================= */
 nav {
   display: flex;
@@ -58,14 +59,14 @@ nav a {
   transition: 0.3s ease;
 }
 
-/* hover */
+/* hover effect */
 nav a:hover {
   background: white;
   color: black;
   transform: translateY(-2px);
 }
 
-/* active */
+/* active link */
 nav a.active {
   background: white;
   color: black;
@@ -73,7 +74,7 @@ nav a.active {
 }
 
 /* =========================
-   Grid Layout (รองรับ content)
+   Grid Layout
    ========================= */
 .grid {
   display: grid;
@@ -87,5 +88,31 @@ nav a.active {
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================
+   🔥 MOBILE FIX (HEADER STACK)
+   ========================= */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 6px 10px;
   }
 }
