@@ -1,56 +1,91 @@
-/* ===== พื้นฐาน ===== */
+/* =========================
+   Base (Progressive Enhancement)
+   ========================= */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
+  background: #0f172a;
+  color: white;
 }
 
-/* ===== Header ===== */
+/* =========================
+   Header (Flexbox)
+   ========================= */
 header {
   background: #111;
   color: white;
-  padding: 25px 60px;
+
+  padding: 20px 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  flex-wrap: wrap; /* responsive */
 }
 
-/* ===== ชื่อเว็บ ===== */
+/* =========================
+   Logo
+   ========================= */
 header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 32px;
 }
 
-/* ===== Nav ===== */
+/* =========================
+   Navigation (Flexbox)
+   ========================= */
 nav {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-/* ===== เมนู ===== */
+/* =========================
+   Menu Links
+   ========================= */
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 
-  padding: 6px 14px;
-  border: 1px solid transparent;
+  padding: 8px 14px;
   border-radius: 10px;
+
+  border: 1px solid transparent;
 
   transition: 0.3s ease;
 }
 
-/* ===== hover ===== */
+/* hover */
 nav a:hover {
   background: white;
   color: black;
-  border: 1px solid white;
   transform: translateY(-2px);
 }
 
-/* ===== active (ค้างไว้) ===== */
+/* active */
 nav a.active {
   background: white;
   color: black;
-  border: 1px solid white;
+  font-size: 18px;
+}
+
+/* =========================
+   Grid Layout (รองรับ content)
+   ========================= */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  padding: 20px;
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }

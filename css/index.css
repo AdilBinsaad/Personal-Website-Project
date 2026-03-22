@@ -1,0 +1,28 @@
+.hero {
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.typing {
+  font-size: 28px;
+  margin: 0;
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+/* card override (ถ้าต้องการเน้นหน้าเดียว) */
+.skills {
+  color: black;
+}
