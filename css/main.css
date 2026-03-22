@@ -8,19 +8,19 @@ body {
 header {
   background: #111;
   color: white;
-  padding: 25px 60px; /* เพิ่ม padding ซ้ายขวา */
+  padding: 25px 60px;
   display: flex;
-  justify-content: space-between; /* ดันซ้าย-ขวา */
+  justify-content: space-between;
   align-items: center;
 }
 
-/* ===== ชื่อเว็บ (ซ้าย) ===== */
+/* ===== ชื่อเว็บ ===== */
 header h1 {
   margin: 0;
   font-size: 24px;
 }
 
-/* ===== Nav (ขวา) ===== */
+/* ===== Nav ===== */
 nav {
   display: flex;
   gap: 20px;
@@ -31,10 +31,26 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
   font-size: 18px;
+
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  transition: 0.3s ease;
 }
 
+/* ===== hover ===== */
 nav a:hover {
-  color: #38bdf8;
+  background: white;
+  color: black;
+  border: 1px solid white;
+  transform: translateY(-2px);
+}
+
+/* ===== active (ค้างไว้) ===== */
+nav a.active {
+  background: white;
+  color: black;
+  border: 1px solid white;
 }
