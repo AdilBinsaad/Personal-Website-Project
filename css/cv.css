@@ -1,0 +1,118 @@
+/* ===== BACKGROUND (LIGHT MODE) ===== */
+body {
+  margin: 0;
+
+  /* 🌤️ สว่าง + modern */
+  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+  color: #0f172a;
+}
+
+/* ===== CONTAINER ===== */
+.cv-container {
+  display: grid;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== CARD (LIGHT GLASS STYLE) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== PROFILE ===== */
+.profile-img {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;   
+  object-fit: cover;    
+  object-position: center;
+  flex-shrink: 0;
+
+  border: 3px solid #60a5fa;
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}
+
+.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  transition: 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* ===== PROFILE TEXT ===== */
+.profile-info {
+  margin-left: 10px;
+}
+
+.profile-info h2 {
+  margin-bottom: 6px;
+}
+
+.profile-info p {
+  margin: 4px 0;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills span {
+  background: #0f172a;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  background: #60a5fa;
+  transform: scale(1.05);
+}
+
+/* ===== PROJECT ===== */
+.project {
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 3px solid #60a5fa;
+  transition: 0.3s;
+}
+
+.project:hover {
+  padding-left: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-info {
+    margin-left: 0;
+  }
+}
