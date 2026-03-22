@@ -17,7 +17,6 @@ body {
 /* ===== HERO ===== */
 .hero {
   flex: 1; /* 🔥 ดัน footer ลงล่างอัตโนมัติ */
-
   display: flex;
   flex-direction: column;
   justify-content: center;

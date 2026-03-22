@@ -4,17 +4,21 @@
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-
+  padding: 0;
   background: #0f172a;
   color: white;
+  overflow-x: hidden; /* กันหลุดขอบ */
 }
 
 /* =========================
-   Header (Desktop Layout)
+   Header FULL WIDTH FIX
    ========================= */
 header {
   background: #111;
   color: white;
+
+  width: 100%;        /* 🔥 เต็มจอ */
+  box-sizing: border-box;
 
   padding: 20px 40px;
 
@@ -23,6 +27,12 @@ header {
   align-items: center;
 
   flex-wrap: wrap;
+
+  header {
+  width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+}
 }
 
 /* =========================
@@ -49,24 +59,24 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+
   font-size: 16px;
-
   padding: 8px 14px;
-  border-radius: 10px;
 
+  border-radius: 10px;
   border: 1px solid transparent;
 
   transition: 0.3s ease;
 }
 
-/* hover effect */
+/* hover */
 nav a:hover {
   background: white;
   color: black;
   transform: translateY(-2px);
 }
 
-/* active link */
+/* active */
 nav a.active {
   background: white;
   color: black;
@@ -80,7 +90,6 @@ nav a.active {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-
   padding: 20px;
 }
 
@@ -92,7 +101,7 @@ nav a.active {
 }
 
 /* =========================
-   🔥 MOBILE FIX (HEADER STACK)
+   MOBILE FIX
    ========================= */
 @media (max-width: 600px) {
   header {
@@ -100,6 +109,7 @@ nav a.active {
     align-items: center;
     text-align: center;
     gap: 10px;
+    width: 100%; /* 🔥 ย้ำให้เต็ม */
   }
 
   header h1 {

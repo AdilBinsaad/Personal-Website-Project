@@ -5,6 +5,22 @@ body {
   /* 🌤️ สว่าง + modern */
   background: linear-gradient(135deg, #e0f2fe, #f8fafc);
   color: #0f172a;
+  
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  /* 🔥 ทำให้เต็มจอ */
+  height: 100%;
+}
+
+/* ===== PAGE LAYOUT ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ===== CONTAINER ===== */
@@ -107,12 +123,32 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
+
   .profile {
     flex-direction: column;
+    align-items: center; /* ทำให้รูปอยู่กลาง */
+    text-align: left;    /* ให้ข้อความไม่ถูก center ทั้งหมด */
+  }
+
+  /* รูปอยู่กลาง */
+  .profile-img {
+    margin: 0 auto;
+  }
+
+  /* กล่องข้อความ */
+  .profile-info {
+    width: 100%;
+    text-align: left;   /* ชื่อ + รายละเอียดชิดซ้าย */
+    margin-left: 0;
+  }
+
+  /* ชื่อ */
+  .profile-info h2 {
     text-align: center;
   }
 
-  .profile-info {
-    margin-left: 0;
+  /* ข้อความยาว */
+  .profile-info p {
+    text-align: left;
   }
 }
