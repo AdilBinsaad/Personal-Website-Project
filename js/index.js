@@ -1,29 +1,35 @@
-// ===== Typing Effect =====
-const text = "👋 Hello, I'm Adil";
-let index = 0;
+// ===== Typing Effect (safe) =====
+const typingEl = document.querySelector(".typing");
 
-function type() {
-  if (index < text.length) {
-    document.querySelector(".typing").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(type, 80);
-  }
-}
-type();
+if (typingEl) {
+  const text = "👋 Hello, I'm Adil";
+  let i = 0;
 
-
-// ===== Scroll Reveal =====
-function reveal() {
-  let elements = document.querySelectorAll(".reveal");
-
-  elements.forEach(el => {
-    let windowHeight = window.innerHeight;
-    let elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 50) {
-      el.classList.add("active");
+  function type() {
+    if (i < text.length) {
+      typingEl.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 80);
     }
-  });
+  }
+
+  type();
 }
 
-window.addEventListener("scroll", reveal);
+
+// ===== Reveal Effect (safe ทุกหน้า) =====
+const reveals = document.querySelectorAll(".reveal");
+
+if (reveals.length > 0) {
+  function reveal() {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", reveal);
+  reveal(); // run ตอนโหลดหน้า
+}

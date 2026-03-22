@@ -1,5 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+
+  /* 🔥 ทำให้เต็มจอ */
+  height: 100%;
+}
+
+/* ===== PAGE LAYOUT ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HERO ===== */
 .hero {
-  height: calc(100vh - 90px);
+  flex: 1; /* 🔥 ดัน footer ลงล่างอัตโนมัติ */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,21 +27,108 @@
   text-align: center;
 
   background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+
+  background-size: 200% 200%;
+  animation: bgMove 10s infinite alternate;
+
   padding: 20px;
   box-sizing: border-box;
 }
 
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* ===== TYPO ===== */
 .typing {
-  font-size: 28px;
+  font-size: 26px;
+  border-right: 3px solid white;
+  white-space: nowrap;
+  overflow: hidden;
   margin: 0;
 }
 
 .subtitle {
-  opacity: 0.9;
   margin-top: 10px;
+  opacity: 0.9;
 }
 
-/* card override (ถ้าต้องการเน้นหน้าเดียว) */
-.skills {
+/* ===== BUTTON ===== */
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: white;
   color: black;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  max-width: 400px;
+}
+
+/* ===== WELCOME ===== */
+.welcome {
+  margin-top: 40px;
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== GLOW ===== */
+.glow-card {
+  transition: 0.3s;
+}
+
+.glow-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+/* ===== REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 12px;
+  color: white;
+  background: rgba(0,0,0,0.2);
 }
