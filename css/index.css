@@ -128,7 +128,7 @@ body {
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 12px;
+  padding: 2px;
   color: white;
-  background: rgba(0,0,0,0.2);
+  background: black;
 }
