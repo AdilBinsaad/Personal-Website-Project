@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <h1>Snake Game</h1>
+
+   <nav>
+    <a href="index.html">Home</a>
+    <a href="cv.html">CV</a>
+    <a href="game.html" class="active">Game</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="game-container">
+
+  <!-- 🎮 ฝั่งเกม -->
+  <div class="game-area">
+
+    <!-- Difficulty -->
+    <div class="difficulty">
+      <label>ระดับความยาก:</label>
+      <select id="level">
+        <option value="150">Easy</option>
+        <option value="100" selected>Medium</option>
+        <option value="60">Hard</option>
+      </select>
+    </div>
+
+    <!-- 🔥 Score ย้ายมาอยู่กับเกม -->
+    <h2 class="score">Score: <span id="score">0</span></h2>
+
+    <!-- เกม -->
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  </div>
+
+  <!-- 📜 กติกา -->
+  <section class="rules">
+    <h3>📜 กติกาการเล่น (Game Rules)</h3>
+
+    <ul>
+      <li>🎮 ใช้ปุ่มลูกศร ⬅️ ➡️ ⬆️ ⬇️ ควบคุมงู</li>
+      <li>🍎 กินอาหารเพื่อเพิ่มคะแนน</li>
+      <li>📈 งูจะยาวขึ้นเมื่อกินอาหาร</li>
+      <li>🚫 ห้ามชนขอบหน้าจอ</li>
+      <li>🚫 ห้ามชนตัวเอง</li>
+      <li>⏸️ เกมจะหยุดเมื่อ Game Over</li>
+      <li>🔁 กด Restart เพื่อเริ่มใหม่</li>
+    </ul>
+
+    <h4>💡 Tips</h4>
+    <ul>
+      <li>วางแผนการเคลื่อนที่ล่วงหน้า</li>
+      <li>งูยิ่งยาวยิ่งควบคุมยาก</li>
+      <li>พยายามอยู่กลางพื้นที่</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- Popup -->
+<div id="gameOverPopup" class="popup hidden">
+  <div class="popup-content">
+    <h2>Game Over</h2>
+    <p>Your Score: <span id="finalScore"></span></p>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+</div>
+
+<noscript>
+  <p>กรุณาเปิด JavaScript เพื่อเล่นเกม</p>
+</noscript>
+
+<script src="js/game.js"></script>
+
+</body>
+</html>
