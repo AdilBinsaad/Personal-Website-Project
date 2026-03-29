@@ -1,87 +1,110 @@
-/* ===== พื้นหลังของหน้าเว็บ ===== */
-body {
+/* ===== RESET & FULL HEIGHT ===== */
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY LAYOUT ===== */
+body {
   font-family: Arial, sans-serif;
 
-  /* พื้นหลังแบบไล่สีโทนสว่าง */
+  /* พื้นหลังสว่าง */
   background: linear-gradient(135deg, #dbeafe, #f8fafc);
   color: #0f172a;
+
+  /* จัด layout ทั้งหน้า */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden; /* 🔥 ไม่ให้ scroll */
 }
 
-/* ===== ส่วนหลัก (จัดกลางหน้าจอ) ===== */
+/* ===== HEADER ===== */
+header {
+  flex-shrink: 0;
+}
+
+/* ===== MAIN ===== */
 .contact {
-  min-height: calc(100vh - 120px);
+  flex: 1; /* 🔥 กินพื้นที่ที่เหลือ */
 
   display: flex;
-  justify-content: center;  /* จัดแนวนอนกลาง */
-  align-items: center;      /* จัดแนวตั้งกลาง */
+  justify-content: center;
+  align-items: center;
 
-  padding: 20px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-/* ===== กล่องการ์ด ===== */
+/* ===== CARD ===== */
 .card {
-  background: rgba(255, 255, 255, 0.8); /* โปร่งนิด ๆ */
-  backdrop-filter: blur(12px);          /* เอฟเฟกต์เบลอ */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
 
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
 
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
 
   text-align: center;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* เงา */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
-/* เอฟเฟกต์ตอนเอาเมาส์ไปชี้ */
+/* hover */
 .card:hover {
-  transform: translateY(-5px); /* ลอยขึ้น */
+  transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* ===== หัวข้อ ===== */
+/* ===== TITLE ===== */
 .card h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
+  margin-bottom: 15px;
+  font-size: 24px;
 }
 
-/* ===== ข้อความทั่วไป ===== */
+/* ===== TEXT ===== */
 .card p {
-  margin: 10px 0;
-  font-size: 16px;
+  margin: 8px 0;
+  font-size: 15px;
 }
 
-/* ===== ลิงก์ ===== */
+/* ===== LINK ===== */
 .card a {
-  color: #2563eb;       /* สีฟ้า */
+  color: #2563eb;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* เอฟเฟกต์ตอน hover ลิงก์ */
 .card a:hover {
   text-decoration: underline;
 }
 
-/* ===== Footer ===== */
+/* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 15px;
+  flex-shrink: 0;
 
-  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+
+  font-size: 13px;
   color: #64748b;
 }
 
-/* ===== Responsive (มือถือ) ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .card {
-    padding: 20px;
+    padding: 15px;
   }
 
   .card h2 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
   }
 }
