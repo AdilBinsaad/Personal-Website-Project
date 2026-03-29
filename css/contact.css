@@ -1,0 +1,87 @@
+/* ===== พื้นหลังของหน้าเว็บ ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* พื้นหลังแบบไล่สีโทนสว่าง */
+  background: linear-gradient(135deg, #dbeafe, #f8fafc);
+  color: #0f172a;
+}
+
+/* ===== ส่วนหลัก (จัดกลางหน้าจอ) ===== */
+.contact {
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+  justify-content: center;  /* จัดแนวนอนกลาง */
+  align-items: center;      /* จัดแนวตั้งกลาง */
+
+  padding: 20px;
+}
+
+/* ===== กล่องการ์ด ===== */
+.card {
+  background: rgba(255, 255, 255, 0.8); /* โปร่งนิด ๆ */
+  backdrop-filter: blur(12px);          /* เอฟเฟกต์เบลอ */
+
+  border-radius: 20px;
+  padding: 30px;
+
+  width: 100%;
+  max-width: 450px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* เงา */
+  transition: 0.3s;
+}
+
+/* เอฟเฟกต์ตอนเอาเมาส์ไปชี้ */
+.card:hover {
+  transform: translateY(-5px); /* ลอยขึ้น */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* ===== หัวข้อ ===== */
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* ===== ข้อความทั่วไป ===== */
+.card p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* ===== ลิงก์ ===== */
+.card a {
+  color: #2563eb;       /* สีฟ้า */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* เอฟเฟกต์ตอน hover ลิงก์ */
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===== Responsive (มือถือ) ===== */
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 22px;
+  }
+}
