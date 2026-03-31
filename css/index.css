@@ -5,14 +5,12 @@ html, body {
   height: 100%;
 }
 
-/* ===== PAGE LAYOUT ===== */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ===== HERO ===== */
 .hero {
   flex: 1; 
   display: flex;
@@ -37,7 +35,6 @@ body {
   100% { background-position: right; }
 }
 
-/* ===== TYPO ===== */
 .typing {
   font-size: 26px;
   border-right: 3px solid white;
@@ -51,7 +48,6 @@ body {
   opacity: 0.9;
 }
 
-/* ===== BUTTON ===== */
 .btn {
   margin-top: 20px;
   padding: 12px 25px;
@@ -68,7 +64,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== GRID ===== */
 .grid {
   display: flex;
   justify-content: center;
@@ -76,7 +71,6 @@ body {
   width: 100%;
 }
 
-/* ===== CARD ===== */
 .card {
   background: white;
   color: black;
@@ -87,7 +81,6 @@ body {
   max-width: 400px;
 }
 
-/* ===== WELCOME ===== */
 .welcome {
   margin-top: 40px;
   animation: floatCard 3s ease-in-out infinite;
@@ -99,7 +92,6 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* ===== GLOW ===== */
 .glow-card {
   transition: 0.3s;
 }
@@ -109,7 +101,6 @@ body {
   box-shadow: 0 0 25px rgba(255,255,255,0.3);
 }
 
-/* ===== REVEAL ===== */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -121,7 +112,6 @@ body {
   transform: translateY(0);
 }
 
-/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 2px;

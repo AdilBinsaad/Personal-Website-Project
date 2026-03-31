@@ -1,8 +1,8 @@
-/* ===== BACKGROUND (LIGHT MODE) ===== */
 body {
   margin: 0;
-  /* 🌤️ สว่าง + modern */
-  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+
+ /* background: linear-gradient(135deg, #e0f2fe, #f8fafc); */
+  background: linear-gradient(135deg, #E6E6FA, #f8fafc);
   color: #0f172a;
   
 }
@@ -10,19 +10,15 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-
-  /* 🔥 ทำให้เต็มจอ */
   height: 100%;
 }
 
-/* ===== PAGE LAYOUT ===== */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ===== CONTAINER ===== */
 .cv-container {
   display: grid;
   gap: 20px;
@@ -31,7 +27,6 @@ body {
   padding: 20px;
 }
 
-/* ===== CARD (LIGHT GLASS STYLE) ===== */
 .card {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
@@ -47,7 +42,6 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== PROFILE ===== */
 .profile-img {
   width: 150px;
   height: 150px;
@@ -87,7 +81,6 @@ body {
   opacity: 0.85;
 }
 
-/* ===== SKILLS ===== */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +101,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== PROJECT ===== */
 .project {
   margin-top: 10px;
   padding: 10px;
@@ -120,7 +112,6 @@ body {
   padding-left: 15px;
 }
 
-/* ===== TIMELINE ===== */
 .timeline {
   position: relative;
   padding-left: 40px;
@@ -134,7 +125,7 @@ body {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+  background: linear-gradient(to bottom, #191970, #3b82f6);
   border-radius: 2px;
 }
 
@@ -206,8 +197,6 @@ body {
   font-size: 14px;
 }
 
-
-/* ===== CONTACT ===== */
 .contact-list {
   list-style: none;
   padding: 0;
@@ -218,26 +207,33 @@ body {
   gap: 1x;
 }
 
-.contact-list li {
-  background: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  border-radius: 8px;
-  transition: 0.3s;
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
+  gap: 6px; 
 }
 
-.contact-list li:hover {
-  background: rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.contact-list li {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px; 
 }
 
 .contact-list strong {
   color: #60a5fa;
   font-weight: 600;
-  min-width: 70px;
-  margin-right: 15px;
+
+  min-width: 60px; 
+  margin-right: 5px;
 }
 
 .contact-list a {
@@ -250,38 +246,33 @@ body {
   color: #60a5fa;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
 
   .profile {
     flex-direction: column;
-    align-items: center; /* ทำให้รูปอยู่กลาง */
-    text-align: left;    /* ให้ข้อความไม่ถูก center ทั้งหมด */
+    align-items: center; 
+    text-align: left;    
   }
 
-  /* รูปอยู่กลาง */
   .profile-img {
     margin: 0 auto;
   }
 
-  /* กล่องข้อความ */
   .profile-info {
     width: 100%;
-    text-align: left;   /* ชื่อ + รายละเอียดชิดซ้าย */
+    text-align: left;   
     margin-left: 0;
   }
 
-  /* ชื่อ */
+
   .profile-info h2 {
     text-align: center;
   }
 
-  /* ข้อความยาว */
   .profile-info p {
     text-align: left;
   }
 
-  /* Timeline responsive */
   .timeline {
     padding-left: 30px;
   }
@@ -313,3 +304,9 @@ body {
   }
 }
 
+footer {
+  text-align: center;
+  padding: 2px;
+  color: white;
+  background: black;
+}
