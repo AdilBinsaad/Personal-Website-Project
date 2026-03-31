@@ -126,3 +126,14 @@ nav a.active {
     padding: 6px 10px;
   }
 }
+
+/* ===== Logo Link ===== */
+.logo {
+  color: white;
+  text-decoration: none;
+}
+
+/* hover นิดนึงให้ดูมีลูกเล่น */
+.logo:hover {
+  opacity: 0.8;
+}

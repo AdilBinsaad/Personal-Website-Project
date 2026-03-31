@@ -130,3 +130,25 @@ footer {
   color: white;
   background: black;
 }
+
+/* ===== BIG WELCOME (ขยายพิเศษ) ===== */
+.big-welcome {
+  max-width: 300px;   /* 🔥 ใหญ่ขึ้นชัด */
+  width: 90%;
+
+  padding: 20px;      /* 🔥 หนาขึ้น ดู premium */
+  border-radius: 20px;
+
+  font-size: 18px;
+}
+
+/* ขยายหัวข้อ */
+.big-welcome h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* ขยายข้อความ */
+.big-welcome p {
+  font-size: 18px;
+}
