@@ -28,7 +28,7 @@
 
     <!-- Difficulty -->
     <div class="difficulty">
-      <label>ระดับความยาก :</label>
+      <label>Difficulty Level :</label>
       <select id="level">
         <option value="150">Easy</option>
         <option value="100" selected>Medium</option>
@@ -46,24 +46,16 @@
 
   <!-- 📜 กติกา -->
   <section class="rules">
-    <h3>📜 กติกาการเล่น (Game Rules)</h3>
+    <h3>📜 Game Rules</h3>
 
     <ul>
-      <li>🎮 ใช้ปุ่มลูกศร ⬅️ ➡️ ⬆️ ⬇️ ควบคุมงู</li>
-      <li>🍎 กินอาหารเพื่อเพิ่มคะแนน</li>
-      <li>📈 งูจะยาวขึ้นเมื่อกินอาหาร</li>
-      <li>🚫 ห้ามชนขอบหน้าจอ</li>
-      <li>🚫 ห้ามชนตัวเอง</li>
-      <li>⏸️ เกมจะหยุดเมื่อ Game Over</li>
-      <li>🔁 กด Restart เพื่อเริ่มใหม่</li>
+    
+      <p>In the Snake game, players control a snake to eat food that appears on the screen. Each time the snake eats, the score increases and the snake grows longer. However, players must be careful not to hit the walls or collide with the snake’s own body, as doing so will immediately end the game. Therefore, careful planning of movements is essential to achieve the highest possible score.
+
+      </p>
+      
     </ul>
 
-    <h4>💡 Tips</h4>
-    <ul>
-      <li>วางแผนการเคลื่อนที่ล่วงหน้า</li>
-      <li>งูยิ่งยาวยิ่งควบคุมยาก</li>
-      <li>พยายามอยู่กลางพื้นที่</li>
-    </ul>
   </section>
 
 </main>
@@ -73,7 +65,7 @@
   <div class="popup-content">
     <h2>Game Over</h2>
     <p>Your Score: <span id="finalScore"></span></p>
-    <button onclick="restartGame()">Restart</button>
+    <button onclick="restartGame()">Play Again</button>
   </div>
 </div>
 
