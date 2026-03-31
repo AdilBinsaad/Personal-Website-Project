@@ -2,8 +2,6 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-
-  /* 🔥 ทำให้เต็มจอ */
   height: 100%;
 }
 
@@ -16,7 +14,7 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  flex: 1; /* 🔥 ดัน footer ลงล่างอัตโนมัติ */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,10 +131,10 @@ footer {
 
 /* ===== BIG WELCOME (ขยายพิเศษ) ===== */
 .big-welcome {
-  max-width: 300px;   /* 🔥 ใหญ่ขึ้นชัด */
+  max-width: 300px;   
   width: 90%;
 
-  padding: 20px;      /* 🔥 หนาขึ้น ดู premium */
+  padding: 20px;      
   border-radius: 20px;
 
   font-size: 18px;

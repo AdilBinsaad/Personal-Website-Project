@@ -2,22 +2,20 @@
    Base (Modern Dark UI)
    ========================= */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: #0f172a;
-  color: white;
-  overflow-x: hidden; /* กันหลุดขอบ */
+  overflow-x: hidden;
 }
 
 /* =========================
-   Header FULL WIDTH FIX
+   Header
    ========================= */
 header {
   background: #111;
   color: white;
 
-  width: 100%;        /* 🔥 เต็มจอ */
+  width: 100%;
   box-sizing: border-box;
 
   padding: 20px 40px;
@@ -27,12 +25,6 @@ header {
   align-items: center;
 
   flex-wrap: wrap;
-
-  header {
-  width: 100%;
-  align-self: stretch;
-  box-sizing: border-box;
-}
 }
 
 /* =========================
@@ -41,6 +33,15 @@ header {
 header h1 {
   margin: 0;
   font-size: 32px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 /* =========================
@@ -69,14 +70,12 @@ nav a {
   transition: 0.3s ease;
 }
 
-/* hover */
 nav a:hover {
   background: white;
   color: black;
   transform: translateY(-2px);
 }
 
-/* active */
 nav a.active {
   background: white;
   color: black;
@@ -93,7 +92,6 @@ nav a.active {
   padding: 20px;
 }
 
-/* desktop */
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -109,7 +107,6 @@ nav a.active {
     align-items: center;
     text-align: center;
     gap: 10px;
-    width: 100%; /* 🔥 ย้ำให้เต็ม */
   }
 
   header h1 {
@@ -125,15 +122,4 @@ nav a.active {
     font-size: 14px;
     padding: 6px 10px;
   }
-}
-
-/* ===== Logo Link ===== */
-.logo {
-  color: white;
-  text-decoration: none;
-}
-
-/* hover นิดนึงให้ดูมีลูกเล่น */
-.logo:hover {
-  opacity: 0.8;
 }

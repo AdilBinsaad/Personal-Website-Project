@@ -7,7 +7,6 @@ html, body {
 
 /* ===== BODY LAYOUT ===== */
 body {
-  font-family: Arial, sans-serif;
 
   /* พื้นหลังสว่าง */
   background: linear-gradient(135deg, #dbeafe, #f8fafc);
@@ -21,6 +20,9 @@ body {
 }
 
 /* ===== HEADER ===== */
+header {
+  flex-shrink: 0;
+}
 
 /* ===== MAIN ===== */
 .contact {

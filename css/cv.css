@@ -1,7 +1,6 @@
 /* ===== BACKGROUND (LIGHT MODE) ===== */
 body {
   margin: 0;
-  font-family: sans-serif;
   /* 🌤️ สว่าง + modern */
   background: linear-gradient(135deg, #e0f2fe, #f8fafc);
   color: #0f172a;

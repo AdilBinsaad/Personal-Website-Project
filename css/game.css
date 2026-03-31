@@ -112,7 +112,7 @@ canvas {
   margin: 0 auto;
 
   width: 100%;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 
   background: black;
@@ -185,6 +185,7 @@ label {
   inset: 0;
 
   background: rgba(0,0,0,0.75);
+  color: white;
 
   display: flex;
   justify-content: center;
@@ -220,10 +221,8 @@ button {
 
   background: #38bdf8;
   color: black;
-
-  cursor: pointer;
-
-  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 button:hover {
