@@ -1,7 +1,16 @@
+/* ===== RESET + FIX OVERFLOW ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
 /* ===== พื้นหลังเว็บ ===== */
 body {
-  margin: 0;
-
   background: linear-gradient(-45deg, #dbeafe, #f0f9ff, #ffffff, #e0f2fe) !important;
   background-size: 400% 400%;
   animation: bgMove 12s ease infinite;
@@ -9,7 +18,7 @@ body {
   color: #0f172a;
 }
 
-/* ===== อนิเมชันพื้นหลังเคลื่อน ===== */
+/* ===== อนิเมชันพื้นหลัง ===== */
 @keyframes bgMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -19,7 +28,7 @@ body {
 /* ===== HEADER ===== */
 header {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
 
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
@@ -27,18 +36,22 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+
+  width: 100%;
 }
 
-/* ===== layout หลัก (แก้ใหม่ทั้งหมด) ===== */
+/* ===== layout หลัก ===== */
 .game-container {
   display: flex;
   flex-direction: column;
 
-  align-items: center;   /* 🔥 กลางแนวนอน */
+  align-items: center;
   justify-content: flex-start;
 
   gap: 20px;
-  padding: 25px;
+
+  padding: 20px; 
+  width: 100%;
 }
 
 /* ===== กล่องเกม ===== */
@@ -56,20 +69,29 @@ header {
   transition: 0.3s;
 
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
 
-  margin: 0 auto; 
+  margin: 0 auto;
+  overflow: hidden; 
 }
 
-/* hover กล่องเกม */
+/* hover */
 .game-area:hover {
   transform: translateY(-5px);
   border-color: #38bdf8;
 }
 
+/* ===== ชื่อเกม ===== */
+.game-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
+
 /* ===== คะแนน ===== */
 .score {
-  font-size: 26px;
+  font-size: 24px;
   margin: 10px 0;
 
   color: #38bdf8;
@@ -78,7 +100,7 @@ header {
   animation: pop 0.6s ease;
 }
 
-/* animation เด้ง */
+/* animation */
 @keyframes pop {
   0% { transform: scale(0.8); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
@@ -86,10 +108,14 @@ header {
 
 /* ===== canvas เกม ===== */
 canvas {
-  background: black;
+  display: block;
+  margin: 0 auto;
+
   width: 100%;
-  max-width: 400px;
-  height: auto; 
+  max-width: 100%;
+  height: auto;
+
+  background: black;
 
   border-radius: 12px;
   border: 2px solid rgba(56,189,248,0.5);
@@ -111,7 +137,7 @@ select {
   cursor: pointer;
 }
 
-/* ===== กติกาเกม ===== */
+/* ===== กติกา ===== */
 .rules {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
@@ -125,9 +151,10 @@ select {
   transition: 0.3s;
 
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
 
-  margin: 0 auto; 
+  margin: 0 auto;
+  overflow: hidden; 
 }
 
 /* hover */
@@ -136,21 +163,20 @@ select {
   border-color: #38bdf8;
 }
 
-/* หัวข้อ */
+/* ข้อความ */
 .rules h3,
 .rules h4 {
-  color: #000000;
+  color: #000;
 }
 
-/* เนื้อหา */
 .rules ul {
   padding-left: 20px;
   line-height: 1.6;
-  color:#0f172a;
+  color: #0f172a;
 }
 
 label {
-  color: #000000;
+  color: #000;
 }
 
 /* ===== popup ===== */
@@ -210,11 +236,19 @@ button:hover {
   display: none;
 }
 
-/* ===== ชื่อเกม ===== */
-.game-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* ===== MOBILE FIX ===== */
+@media (max-width: 600px) {
+  .game-area,
+  .rules {
+    padding: 15px;
+  }
 
-  color: #000000;
+  .game-title {
+    font-size: 26px;
+    color: #000;
+  }
+
+  .score {
+    font-size: 20px;
+  }
 }
