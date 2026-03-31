@@ -3,7 +3,6 @@ body {
   margin: 0;
 
   background: linear-gradient(-45deg, #dbeafe, #f0f9ff, #ffffff, #e0f2fe) !important;
-
   background-size: 400% 400%;
   animation: bgMove 12s ease infinite;
 
@@ -22,31 +21,24 @@ header {
   text-align: center;
   padding: 20px;
 
-  /* ทำให้ header โปร่ง + blur */
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
 
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
-/* ===== layout หลัก ===== */
+/* ===== layout หลัก (แก้ใหม่ทั้งหมด) ===== */
 .game-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 
-  /* มือถือ = 1 คอลัมน์ */
-  grid-template-columns: 1fr;
+  align-items: center;   /* 🔥 กลางแนวนอน */
+  justify-content: flex-start;
 
   gap: 20px;
   padding: 25px;
-}
-
-/* ===== จอใหญ่ = 2 คอลัมน์ ===== */
-@media (min-width: 768px) {
-  .game-container {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
 }
 
 /* ===== กล่องเกม ===== */
@@ -58,13 +50,15 @@ header {
 
   text-align: center;
 
-  /* เงาให้ลอย */
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-  /* blur แบบ glass */
   backdrop-filter: blur(12px);
 
   transition: 0.3s;
+
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0 auto; /* 🔥 กลางจริง */
 }
 
 /* hover กล่องเกม */
@@ -81,7 +75,6 @@ header {
   color: #38bdf8;
   text-shadow: 0 0 10px rgba(56,189,248,0.5);
 
-  /* animation เวลาคะแนนเปลี่ยน */
   animation: pop 0.6s ease;
 }
 
@@ -95,16 +88,18 @@ header {
 canvas {
   background: black;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
+  height: auto; 
 
   border-radius: 12px;
   border: 2px solid rgba(56,189,248,0.5);
 
-  /* glow รอบ canvas */
   box-shadow: 0 0 20px rgba(56,189,248,0.2);
+
+  touch-action: none;
 }
 
-/* ===== dropdown ความยาก ===== */
+/* ===== dropdown ===== */
 select {
   padding: 6px 10px;
   border-radius: 8px;
@@ -128,24 +123,26 @@ select {
   backdrop-filter: blur(12px);
 
   transition: 0.3s;
+
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0 auto; /* 🔥 อยู่ล่าง + กลาง */
 }
 
-/* hover กติกา */
+/* hover */
 .rules:hover {
   transform: translateY(-5px);
   border-color: #38bdf8;
 }
 
-/* หัวข้อกติกา */
-.rules h3 {
-  color: #000000;
-}
-
+/* หัวข้อ */
+.rules h3,
 .rules h4 {
   color: #000000;
 }
 
-/* list กติกา */
+/* เนื้อหา */
 .rules ul {
   padding-left: 20px;
   line-height: 1.6;
@@ -156,7 +153,7 @@ label {
   color: #000000;
 }
 
-/* ===== popup Game Over ===== */
+/* ===== popup ===== */
 .popup {
   position: fixed;
   inset: 0;
@@ -168,7 +165,6 @@ label {
   align-items: center;
 }
 
-/* กล่อง popup */
 .popup-content {
   background: rgba(255,255,255,0.08);
   padding: 30px;
@@ -180,11 +176,9 @@ label {
 
   box-shadow: 0 0 30px rgba(56,189,248,0.3);
 
-  /* animation เด้งเข้า */
   animation: popupIn 0.4s ease;
 }
 
-/* popup animation */
 @keyframes popupIn {
   from { transform: scale(0.7); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -206,18 +200,21 @@ button {
   transition: 0.3s;
 }
 
-/* hover ปุ่ม */
 button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 15px #38bdf8;
 }
 
-/* ซ่อน element */
+/* ซ่อน */
 .hidden {
   display: none;
 }
 
-/* กัน scroll เวลาเล่นบนมือถือ */
-canvas {
-  touch-action: none;
+/* ===== ชื่อเกม ===== */
+.game-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  color: #000000;
 }
