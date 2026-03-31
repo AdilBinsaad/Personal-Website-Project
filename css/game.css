@@ -56,9 +56,9 @@ header {
   transition: 0.3s;
 
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
 
-  margin: 0 auto; /* 🔥 กลางจริง */
+  margin: 0 auto; 
 }
 
 /* hover กล่องเกม */
@@ -88,7 +88,7 @@ header {
 canvas {
   background: black;
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   height: auto; 
 
   border-radius: 12px;
@@ -125,9 +125,9 @@ select {
   transition: 0.3s;
 
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
 
-  margin: 0 auto; /* 🔥 อยู่ล่าง + กลาง */
+  margin: 0 auto; 
 }
 
 /* hover */
