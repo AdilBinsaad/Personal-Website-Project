@@ -125,3 +125,46 @@ document.addEventListener("keydown", (e) => {
     velocityX = 1; velocityY = 0;
   }
 });
+
+// ===== รองรับมือถือ (Swipe Control) =====
+let touchStartX = 0;
+let touchStartY = 0;
+
+// เริ่มแตะ
+canvas.addEventListener("touchstart", function (e) {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+// ลากนิ้ว
+canvas.addEventListener("touchmove", function (e) {
+  e.preventDefault(); // ❗ กัน scroll
+
+  let touchEndX = e.touches[0].clientX;
+  let touchEndY = e.touches[0].clientY;
+
+  let dx = touchEndX - touchStartX;
+  let dy = touchEndY - touchStartY;
+
+  // ตรวจว่าลากแนวนอนหรือแนวตั้ง
+  if (Math.abs(dx) > Math.abs(dy)) {
+    // แนวนอน
+    if (dx > 0 && velocityX === 0) {
+      velocityX = 1; velocityY = 0;
+    } else if (dx < 0 && velocityX === 0) {
+      velocityX = -1; velocityY = 0;
+    }
+  } else {
+    // แนวตั้ง
+    if (dy > 0 && velocityY === 0) {
+      velocityX = 0; velocityY = 1;
+    } else if (dy < 0 && velocityY === 0) {
+      velocityX = 0; velocityY = -1;
+    }
+  }
+
+  // อัปเดตค่าเริ่มต้นใหม่ (ให้ลากต่อได้ลื่น)
+  touchStartX = touchEndX;
+  touchStartY = touchEndY;
+
+}, { passive: false });

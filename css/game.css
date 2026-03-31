@@ -216,3 +216,8 @@ button:hover {
 .hidden {
   display: none;
 }
+
+/* กัน scroll เวลาเล่นบนมือถือ */
+canvas {
+  touch-action: none;
+}
